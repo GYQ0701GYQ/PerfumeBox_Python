@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery鼠标驱动背景图片动画特效</title>
+
+<!--可无视-->
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+
+
+<!--主要样式-->
+<link rel="stylesheet" href="css/style.css">
+
+
+
+
+</head>
+<body>
+
+
+<div id="wrap">
+<!--  <a href="#" class="hb">-->
+<!--	<div class="c">-->
+<!--	  <img src="https://cdn.pixabay.com/photo/2016/03/09/09/23/water-1245779_1280.jpg" alt="" style="width: 480px;height: 330px" />-->
+<!--	  <div class="txt">-->
+<!--		<h1>Title here</h1>-->
+<!--		<p>Some longer text here thats wide enough to span on several lines.</p>-->
+<!--	  </div>-->
+<!--	</div>-->
+<!--  </a>-->
+<!--  <div class="fullBg">-->
+<!--	<img src="https://cdn.pixabay.com/photo/2016/03/09/09/23/water-1245779_1280.jpg" alt=""/>-->
+<!--  </div>-->
+<!--以上为原图片展示内容-->
+  <div v-for="fragrance_item in fragrance" id="aaaa">
+  <a href="#" class="hb" >
+	<div class="c">
+	  <img :src="fragrance_item.src" alt="" style="width: 480px;height: 350px"/>
+	  <div class="txt">
+		<h1>{{fragrance_item.title}}</h1>
+		<p>{{fragrance_item.info}}</p>
+	  </div>
+	</div>
+  </a>
+  <div class="fullBg">
+	<img :src="fragrance_item.src" alt=""/>
+  </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	  var docWidth = $('body').width(),
+		  $wrap = $('#wrap'),
+		  $images = $('#wrap .hb'),
+		  slidesWidth = $wrap.width();
+
+	  $(window).on('resize', function(){
+		docWidth = $('body').width();
+		slidesWidth = $wrap.width();
+	  })
+
+	  $(document).mousemove(function(e) {
+		var mouseX = e.pageX,
+			offset = mouseX / docWidth * slidesWidth - mouseX / 2;
+
+		$images.css({
+		  '-webkit-transform': 'translate3d(' + -offset + 'px,0,0)',
+				  'transform': 'translate3d(' + -offset + 'px,0,0)'
+		});
+	  });
+	})
+</script>
+<script>
+var wrap=new Vue({
+  el:'#wrap',
+  data:{
+    fragrance:[
+      {
+        src:'https://cdn.pixabay.com/photo/2015/03/09/12/54/fruit-665621_1280.jpg',
+        title:'柑橘调 - Citrus',
+        info:'柑橘调同花香调一样，是非常古老的一种香调。这个香调主要呈现的是清新自然的感觉，包含香柠檬、橘子、葡萄柚一类的标志性香料，统称柑橘。' +
+          '柑橘调带来的香气感受比较单一，舒爽清新，但是却是特别的，无可替代的。它比水果多了份植物的绿色，比植物多了些水果的酸甜。' +
+          '这种气味没有明显的性别或者场合界限，无论男女，在任何需要使用香水的时候都可以选择柑橘调。'
+      },
+      {
+        src:'https://cdn.pixabay.com/photo/2016/06/17/10/49/leaf-1463090_1280.jpg',
+        title:'绿叶调 - Green',
+        info:'绿叶香调与花香调一样是历史悠久的气味，而从英文Green可以看出，绿叶调是最具有绿色大自然气息的香调。' +
+          '这个香调的气味包括青草、绿叶的香气，也包括具有海洋气息的海藻气味，同时还包含类似青苹果香气的苹果绿香。' +
+          '通过对植物香气进行萃取，或用零陵香豆等带有绿叶香气等人工香料进行模仿，就可以得到绿叶调香料。'
+      },
+      {
+        src:'https://cdn.pixabay.com/photo/2016/03/09/09/23/water-1245779_1280.jpg',
+        title:'水生调 - Water',
+        info:'如今水生调的香水在市场上似乎不太受欢迎，但是这个香调带来的类似海风一样的质感，却是清新类香水和海洋主题香水不可缺少的一种香料。' +
+          '这种湿润空气的气息来自一种叫作西瓜酮的化合物，在上世纪八十年代就开始被应用在香水当中。三宅一生的一生之水和大卫杜夫的冷水香水当中，' +
+          '都加入了这一化合物，带来清凉的同时有一点镇静之感。'
+      },
+      {
+        src:'https://cdn.pixabay.com/photo/2018/06/16/20/44/lavender-3479492_1280.jpg',
+        title:'馥奇调 - Aromatic Fougère',
+        info:'馥奇调的名称来源于1882年发行的皇家馥奇（Frougere Royale），由调香师Paul Parquet调制。不同于香奈儿5号香水中加入的化学物醛，这瓶香水中加入了第一个人造香料—豆香素，' +
+          '从而开启了现代香水工业的发展。豆香素会有类似青草的绿色气息，运用比较广的是零陵香豆。豆香素加上薰衣草和橡苔的气味，就组成了最基本的馥奇香调。' +
+          '因为馥奇调通常会同时拥有苷苔调的橡苔，花香调中的薰衣草，绿叶调的青草气息和木质香气的味道，这个香调也被称为“所有香调的结合”。'
+      },
+      {
+        src:'https://cdn.pixabay.com/photo/2016/03/09/09/27/bible-1245795_1280.jpg',
+        title:'皮革调 - Leather',
+        info:'皮革与香水的发展是具有紧密联系的。在11世纪，皮革的生产会产生异味，所以皮革手套需要浸泡香水，以除去皮革的异味。' +
+          '而到了16世纪，香水的添加不再满足于除臭，散发着香气的皮革手套被当成香氛品风靡欧洲。可以说皮革元素添加于香水中，是习惯使然，也是神来之笔。' +
+          '皮革调以牛羊皮、麂皮的气味为主，会配合花香、木质香，具有古典，沉静，华贵的气味风格。'
+      },
+      {
+        src:'https://cdn.pixabay.com/photo/2015/11/07/11/20/forest-1031022_1280.jpg',
+        title:'苷苔调 - Chyper',
+        info:'苷苔调又被叫做西普调，诞生于1917年，得名于由调香师Francois Coty调制的香水Chypre，法语中的塞浦路斯岛，传说中维纳斯的诞生地。' +
+          '橡木苔是苷苔调的灵魂，配合木质调的气味和广藿香的苦药香，营造潮湿阴郁的树林还有泥土的气息，所以苷苔调的香水都会带有一些冷淡，不去讨好任何人的疏离感。' +
+          '这一类香水特别适合职场老手和高管们使用，给人理性克制的形象，自带气场。相反地，轻松愉快的场合不适宜使用苷苔调香水，会给人凌厉疏远的气息'
+      },
+      {
+        src:'https://cdn.pixabay.com/photo/2016/03/06/20/37/wood-fire-1241199_1280.jpg',
+        title:'木质调 - Wood',
+        info:'木质调是一个十分古老的香调，从远古人类焚烧木材与神灵沟通开始，木的香气便开始赋予神秘的气息。而木质调的气味也偏重于表达沉稳、冷静，' +
+          '又或者是温暖的气质，由木材、松叶、香草根等香材组成。木质调并不单调，不同的木材会体现出不同的味道。例如檀木会带有一丝丝的乳香，' +
+          '帖服好穿，而沉香木会比檀木更加严肃深沉，同时雪松又有清冷的气场。所以木质香气可以被灵活地运用在各种搭配之间，组成花香木质调、木质东方调等。'
+      },
+      {
+        src:'https://cdn.pixabay.com/photo/2018/12/02/21/26/cinnamon-3852212_1280.jpg',
+        title:'东方调 - Oriental',
+        info:'伴随着欧洲人对东方的向往，东方香调诞生了。在这个香调中，香脂、木质调还有焚香等元素被用来塑造东方的神秘与华丽。' +
+          '其中的东方对应的除了东亚，还有印度和阿拉伯地区。东方香调整体浓郁复杂，可辛辣热烈，也可温润沉静，整体的气息显得成熟而知性。' +
+          '因此东方香调的香水比较适合一些隆重的场合或者秋冬时节，有一些阅历的人对于东方香调的驾驭会更好。'
+      },
+      {
+        src:'https://cdn.pixabay.com/photo/2020/02/08/18/08/coin-coffee-4830880_1280.jpg',
+        title:'美食调 - Gourmand',
+        info:'美食香调是一个将味觉和嗅觉联系起来的香调，它的诞生得益于Thierry Mugler在1992年发售的天使香水，使蜂蜜、椰子、黑巧克力、焦糖等的食物香气出现在香水当中。' +
+          '但是这一支香水却不是人见人爱的天使，甜腻的美食香气和苦涩的广藿香融合在一起，充满了锋芒与个性，也令这支香水的评价两极分化。' +
+          '在日常使用时建议根据需求选择加入美食味道的木质调、花香调或柑橘调香水，既自然不突兀，又能成为人群中最温暖可口的一位。'
+      },
+      {
+        src:'https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509_1280.jpg',
+        title:'花香调 - Floral',
+        info:'花是最为传统的香料之一，无论是西方的花露还是东方的合香，花朵很早就被我们观赏和使用，用花的气味做香水、香膏等香氛产品已经十分常见。' +
+          '花香之所以能够被使用并且经久不衰，除了香气怡人以外，也是因为不同的花朵可以表现出不同女性的姿态，具有很强的可塑性。' +
+          '玫瑰的艳丽、茉莉的灵动、鸢尾花的雍容，铃兰的娇美，大自然中无数各具魅力的花朵在香水中被用来调制女香和中性香水，塑造出不同的香味组合。'
+      },
+      {
+        src:'https://cdn.pixabay.com/photo/2018/05/08/20/19/pomegranate-3383814_1280.jpg',
+        title:'果香调 - Fruity',
+        info:'果香调的香水顾名思义就是加入了水果香气的香水。果香调与柑橘调不同的是，柑橘调以柠檬、橘子、葡萄柚这一酸甜的柑橘水果为主，清新明亮。' +
+          '而果香调则包含除了柑橘类水果以外的水果香气，例如可口多汁的桃子、西瓜、苹果、芒果等等。果香调香水通常配以花香、木质香或者绿叶香气，令香水变得活力、年轻、层次丰富。'
+      }
+    ]
+  }
+})
+</script>
+</body>
+</html>

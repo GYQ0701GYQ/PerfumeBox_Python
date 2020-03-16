@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue基础</title>
+    <style>
+      .active{
+        border: 1px solid aqua;
+      }
+    </style>
+</head>
+
+<body>
+<!--HTML结构-->
+<div id="app">
+  {{ message }}
+  <h2>{{school.name}} {{school.mobile}}</h2>
+  <ol>
+    <li>{{campus[0]}}</li>
+    <li>{{campus[1]}}</li>
+  </ol>
+  <p v-html="content"></p>
+  <p v-text="content"></p>
+  <input type="button" value="v-on指令" @click="doIt">
+  <input type="button" value="移入" @mouseenter="doIt">
+  <input type="button" value="双击" @dblclick="doIt">
+  <h2 @click="changeFood">{{ food }}</h2>
+  <button @click="sub">-</button>
+  <span>{{num}}</span>
+  <button @click="add">+</button>
+  <button @click="changeIsShow">显示图片1</button>
+  <img v-show="isShow" src="../src/assets/demo1.jpg" width="100px">
+  <br>
+  <img :src="logoSrc" alt="Logo图" title="logo图片信息" width="100px"
+       :class="isActive?'active':''" @click="toggleActive">
+  <img :src="logoSrc" alt="Logo图" title="logo图片信息" width="100px"
+       :class="{active:isActive}" @click="toggleActive">
+</div>
+<!--开发环境版本，包含了有帮助的命令行警告-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+<!--创建VUE实例-->
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!',
+      school:{
+        name:"管俣祺",
+        mobile:"17801119872"
+      },
+      campus:["北京","上海","深圳"],
+      // content:"Content内容",
+      content:"<a href='https://www.baidu.com/index.php?tn=monline_3_dg'>Content内容</a>",
+      food:"西兰花",
+      num:1,
+      isShow:false,
+      logoSrc:"../assets/logo.png",
+      isActive:false
+    },
+    methods: {
+      doIt:function () {
+        alert("做IT");
+      },
+      changeFood:function () {
+        // console.log(this.food)
+        this.food+="好好吃！"
+      },
+      add:function () {
+        if(this.num<10) {
+          this.num++;
+        }else{
+          alert("别点啦，最大啦！")
+        }
+      },
+      sub:function () {
+        if(this.num>0) {
+          this.num--;
+        }else{
+          alert("别点啦，最小啦！")
+        }
+      },
+      changeIsShow:function () {
+        this.isShow=!this.isShow;
+      },
+      toggleActive:function () {
+        this.isActive=!this.isActive;
+      }
+    }
+  })
+</script>
+</body>
+</html>
