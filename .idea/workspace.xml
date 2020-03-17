@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3086d882-04d3-4d63-b720-02b7343d1138" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="3086d882-04d3-4d63-b720-02b7343d1138" name="Default Changelist" comment="与上一版本相同，添加仓库后自动更改了一些系统文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +12,21 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1Z4vcGrWIflf3unFbTPfQjkqlpw" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -36,13 +45,14 @@
       <recent name="D:\PYCHARM\workplace\PerfumeBoxProject" />
     </key>
   </component>
-  <component name="RunManager" selected="Django server.RunDjango">
+  <component name="RunManager" selected="Python.Run">
     <configuration name="Run" type="PythonConfigurationType" factoryName="Python">
       <module name="workplace" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="PerfumeBoxProject.settings" />
       </envs>
       <option name="SDK_HOME" value="D:\PYCHARM\workplace\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PerfumeBoxProject" />
@@ -118,50 +128,78 @@
       <workItem from="1584235304973" duration="2311000" />
       <workItem from="1584239871820" duration="10517000" />
       <workItem from="1584279196826" duration="3392000" />
-      <workItem from="1584323196505" duration="5034000" />
+      <workItem from="1584323196505" duration="11389000" />
+      <workItem from="1584368267769" duration="313000" />
+      <workItem from="1584413499870" duration="5357000" />
+      <workItem from="1584419576357" duration="7530000" />
     </task>
+    <task id="LOCAL-00001" summary="与上一版本相同，添加仓库后自动更改了一些系统文件">
+      <created>1584347473441</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584347473441</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="与上一版本相同，添加仓库后自动更改了一些系统文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="与上一版本相同，添加仓库后自动更改了一些系统文件" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="447" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584262661960">
+    <state x="447" y="6" width="1089" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584420372801">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584262661960" />
+    <state x="447" y="6" width="1089" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584420372801" />
     <state x="504" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584236058319">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="504" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1584236058319" />
-    <state x="372" y="5" key="CommitChangelistDialog2" timestamp="1584347386775">
+    <state x="372" y="5" key="CommitChangelistDialog2" timestamp="1584423766863">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584347386775" />
-    <state x="371" y="287" width="440" height="491" key="EnvironmentVariablesDialog" timestamp="1584262611518">
+    <state x="372" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584423766863" />
+    <state x="371" y="287" width="440" height="491" key="EnvironmentVariablesDialog" timestamp="1584420321988">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="371" y="287" width="440" height="491" key="EnvironmentVariablesDialog/0.0.1536.824@0.0.1536.824" timestamp="1584262611518" />
+    <state x="371" y="287" width="440" height="491" key="EnvironmentVariablesDialog/0.0.1536.824@0.0.1536.824" timestamp="1584420321988" />
     <state x="514" y="207" key="FileChooserDialogImpl" timestamp="1584114129731">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="514" y="207" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584114129731" />
-    <state width="1493" height="127" key="GridCell.Tab.0.bottom" timestamp="1584346670015">
+    <state width="1493" height="154" key="GridCell.Tab.0.bottom" timestamp="1584434957173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="127" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584346670015" />
-    <state width="1493" height="127" key="GridCell.Tab.0.center" timestamp="1584346670000">
+    <state width="1493" height="154" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584434957173" />
+    <state width="1493" height="154" key="GridCell.Tab.0.center" timestamp="1584434957173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="127" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584346670000" />
-    <state width="1493" height="127" key="GridCell.Tab.0.left" timestamp="1584346670000">
+    <state width="1493" height="154" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584434957173" />
+    <state width="1493" height="154" key="GridCell.Tab.0.left" timestamp="1584434957173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="127" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584346670000" />
-    <state width="1493" height="127" key="GridCell.Tab.0.right" timestamp="1584346670000">
+    <state width="1493" height="154" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584434957173" />
+    <state width="1493" height="154" key="GridCell.Tab.0.right" timestamp="1584434957173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="127" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584346670000" />
+    <state width="1493" height="154" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584434957173" />
     <state x="291" y="100" key="SettingsEditor" timestamp="1584262630127">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -172,6 +210,6 @@
     <state x="454" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584111273572" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/workplace$Run.coverage" NAME="Run Coverage Results" MODIFIED="1584115738959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PerfumeBoxProject" />
+    <SUITE FILE_PATH="coverage/workplace$Run.coverage" NAME="Run Coverage Results" MODIFIED="1584434929965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PerfumeBoxProject" />
   </component>
 </project>
