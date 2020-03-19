@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3086d882-04d3-4d63-b720-02b7343d1138" name="Default Changelist" comment="与上一版本相同，添加仓库后自动更改了一些系统文件">
+    <list default="true" id="3086d882-04d3-4d63-b720-02b7343d1138" name="Default Changelist" comment="在Test.py注释部分是python测试代码，未注释部分是用py2neo做的neo4j数据库连接测试，查询了单个节点并返回。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PerfumeBoxProject/PerfumeBox/scripts/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/PerfumeBoxProject/PerfumeBox/scripts/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PerfumeBoxProject/PerfumeBox/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PerfumeBoxProject/PerfumeBox/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PerfumeBoxProject/PerfumeBoxProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PerfumeBoxProject/PerfumeBoxProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PerfumeBoxProject/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/PerfumeBoxProject/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PerfumeBoxProject/dist/static/css/app.ac0eb513c644f9b94ba320ccc921ce3e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PerfumeBoxProject/dist/static/css/app.ac0eb513c644f9b94ba320ccc921ce3e.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PerfumeBoxProject/dist/static/js/app.118493d2267f8d831200.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PerfumeBoxProject/dist/static/js/app.118493d2267f8d831200.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PerfumeBoxProject/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/PerfumeBoxProject/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +140,8 @@
       <workItem from="1584323196505" duration="11389000" />
       <workItem from="1584368267769" duration="313000" />
       <workItem from="1584413499870" duration="5357000" />
-      <workItem from="1584419576357" duration="7530000" />
+      <workItem from="1584419576357" duration="12620000" />
+      <workItem from="1584496542741" duration="10452000" />
     </task>
     <task id="LOCAL-00001" summary="与上一版本相同，添加仓库后自动更改了一些系统文件">
       <created>1584347473441</created>
@@ -140,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584347473441</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="在Test.py注释部分是python测试代码，未注释部分是用py2neo做的neo4j数据库连接测试，查询了单个节点并返回。">
+      <created>1584437014492</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584437014492</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,21 +178,22 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="与上一版本相同，添加仓库后自动更改了一些系统文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="与上一版本相同，添加仓库后自动更改了一些系统文件" />
+    <MESSAGE value="在Test.py注释部分是python测试代码，未注释部分是用py2neo做的neo4j数据库连接测试，查询了单个节点并返回。" />
+    <option name="LAST_COMMIT_MESSAGE" value="在Test.py注释部分是python测试代码，未注释部分是用py2neo做的neo4j数据库连接测试，查询了单个节点并返回。" />
   </component>
   <component name="WindowStateProjectService">
     <state x="447" y="6" width="1089" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584420372801">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="6" width="1089" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584420372801" />
-    <state x="504" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584236058319">
+    <state x="504" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584496773306">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="504" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1584236058319" />
-    <state x="372" y="5" key="CommitChangelistDialog2" timestamp="1584423766863">
+    <state x="504" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1584496773306" />
+    <state x="372" y="5" key="CommitChangelistDialog2" timestamp="1584496879681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584423766863" />
+    <state x="372" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584496879681" />
     <state x="371" y="287" width="440" height="491" key="EnvironmentVariablesDialog" timestamp="1584420321988">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -184,22 +202,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="514" y="207" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584114129731" />
-    <state width="1493" height="154" key="GridCell.Tab.0.bottom" timestamp="1584434957173">
+    <state width="1493" height="321" key="GridCell.Tab.0.bottom" timestamp="1584544896810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="154" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584434957173" />
-    <state width="1493" height="154" key="GridCell.Tab.0.center" timestamp="1584434957173">
+    <state width="1493" height="321" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584544896810" />
+    <state width="1493" height="321" key="GridCell.Tab.0.center" timestamp="1584544896810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="154" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584434957173" />
-    <state width="1493" height="154" key="GridCell.Tab.0.left" timestamp="1584434957173">
+    <state width="1493" height="321" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584544896810" />
+    <state width="1493" height="321" key="GridCell.Tab.0.left" timestamp="1584544896809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="154" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584434957173" />
-    <state width="1493" height="154" key="GridCell.Tab.0.right" timestamp="1584434957173">
+    <state width="1493" height="321" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584544896809" />
+    <state width="1493" height="321" key="GridCell.Tab.0.right" timestamp="1584544896810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="154" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584434957173" />
+    <state width="1493" height="321" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584544896810" />
     <state x="291" y="100" key="SettingsEditor" timestamp="1584262630127">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -210,6 +228,6 @@
     <state x="454" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584111273572" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/workplace$Run.coverage" NAME="Run Coverage Results" MODIFIED="1584434929965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PerfumeBoxProject" />
+    <SUITE FILE_PATH="coverage/workplace$Run.coverage" NAME="Run Coverage Results" MODIFIED="1584600259377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PerfumeBoxProject" />
   </component>
 </project>
