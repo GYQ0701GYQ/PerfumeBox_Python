@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL', 'bolt://neo4j:987qazwsxedc@localhost:7687')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_neomodel',
     'PerfumeBox'
 ]
 
