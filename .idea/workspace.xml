@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3086d882-04d3-4d63-b720-02b7343d1138" name="Default Changelist" comment="同上一版本，删除了Vue打包的dist文件，前后端测试直接以跨域访问的形式进行">
+    <list default="true" id="3086d882-04d3-4d63-b720-02b7343d1138" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PerfumeBoxProject/PerfumeBox/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/PerfumeBoxProject/PerfumeBox/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +36,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="deletionFromPopupRequiresConfirmation" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test2.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test4.py" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
@@ -46,7 +45,7 @@
       <recent name="D:\PYCHARM\workplace\PerfumeBoxProject" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Run_test2">
+  <component name="RunManager" selected="Python.Run_test4">
     <configuration name="RunDjango2" type="PythonConfigurationType" factoryName="Python">
       <module name="workplace" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -92,6 +91,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Run_test3" type="PythonConfigurationType" factoryName="Python">
+      <module name="workplace" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\PYCHARM\workplace\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Run_test4" type="PythonConfigurationType" factoryName="Python">
+      <module name="workplace" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\PYCHARM\workplace\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="RunDjango" type="Python.DjangoServer" factoryName="Django server">
       <module name="workplace" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -120,6 +163,8 @@
       <item itemvalue="Django server.RunDjango" />
       <item itemvalue="Python.RunDjango2" />
       <item itemvalue="Python.Run_test2" />
+      <item itemvalue="Python.Run_test3" />
+      <item itemvalue="Python.Run_test4" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -159,7 +204,13 @@
       <workItem from="1584496542741" duration="10452000" />
       <workItem from="1584600251083" duration="4680000" />
       <workItem from="1584608478039" duration="6611000" />
-      <workItem from="1584768310532" duration="14158000" />
+      <workItem from="1584768310532" duration="14836000" />
+      <workItem from="1584800694772" duration="8000" />
+      <workItem from="1584840439948" duration="5197000" />
+      <workItem from="1584948519102" duration="30265000" />
+      <workItem from="1585053456756" duration="377000" />
+      <workItem from="1585053854143" duration="1366000" />
+      <workItem from="1585055705584" duration="96000" />
     </task>
     <task id="LOCAL-00001" summary="与上一版本相同，添加仓库后自动更改了一些系统文件">
       <created>1584347473441</created>
@@ -189,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584607504307</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="删掉了model.py中对neo4j数据库定义的Book类，workplace文件夹下test2.py是修改后爬取古诗词的爬虫代码（原版代码有错）">
+      <created>1584800253279</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584800253279</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,45 +271,46 @@
     <MESSAGE value="在Test.py注释部分是python测试代码，未注释部分是用py2neo做的neo4j数据库连接测试，查询了单个节点并返回。" />
     <MESSAGE value="（接口测试demo1）views.py中编写了测试接口，前端触发接口函数时后端会print提示信息，返回数据为字典格式，前端控制台可以显示但不能渲染到页面上" />
     <MESSAGE value="同上一版本，删除了Vue打包的dist文件，前后端测试直接以跨域访问的形式进行" />
-    <option name="LAST_COMMIT_MESSAGE" value="同上一版本，删除了Vue打包的dist文件，前后端测试直接以跨域访问的形式进行" />
+    <MESSAGE value="删掉了model.py中对neo4j数据库定义的Book类，workplace文件夹下test2.py是修改后爬取古诗词的爬虫代码（原版代码有错）" />
+    <option name="LAST_COMMIT_MESSAGE" value="删掉了model.py中对neo4j数据库定义的Book类，workplace文件夹下test2.py是修改后爬取古诗词的爬虫代码（原版代码有错）" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="447" y="6" width="1089" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584769423981">
+    <state x="447" y="6" width="1089" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585055801556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="6" width="1089" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584769423981" />
+    <state x="447" y="6" width="1089" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585055801556" />
     <state x="504" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584496773306">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="504" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1584496773306" />
-    <state x="237" y="5" key="CommitChangelistDialog2" timestamp="1584768355616">
+    <state x="334" y="0" key="CommitChangelistDialog2" timestamp="1584800250549">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="237" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584768355616" />
+    <state x="334" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584800250549" />
     <state x="371" y="287" width="440" height="491" key="EnvironmentVariablesDialog" timestamp="1584420321988">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="371" y="287" width="440" height="491" key="EnvironmentVariablesDialog/0.0.1536.824@0.0.1536.824" timestamp="1584420321988" />
-    <state x="514" y="207" key="FileChooserDialogImpl" timestamp="1584769412629">
+    <state x="514" y="207" key="FileChooserDialogImpl" timestamp="1585055799634">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="514" y="207" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584769412629" />
-    <state width="1493" height="296" key="GridCell.Tab.0.bottom" timestamp="1584799724515">
+    <state x="514" y="207" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585055799634" />
+    <state width="1493" height="2" key="GridCell.Tab.0.bottom" timestamp="1585055397580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="296" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584799724515" />
-    <state width="1493" height="296" key="GridCell.Tab.0.center" timestamp="1584799724515">
+    <state width="1493" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585055397580" />
+    <state width="1493" height="2" key="GridCell.Tab.0.center" timestamp="1585055397580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="296" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584799724515" />
-    <state width="1493" height="296" key="GridCell.Tab.0.left" timestamp="1584799724515">
+    <state width="1493" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585055397580" />
+    <state width="1493" height="2" key="GridCell.Tab.0.left" timestamp="1585055397580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="296" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584799724515" />
-    <state width="1493" height="296" key="GridCell.Tab.0.right" timestamp="1584799724515">
+    <state width="1493" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585055397580" />
+    <state width="1493" height="2" key="GridCell.Tab.0.right" timestamp="1585055397580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="296" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584799724515" />
+    <state width="1493" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585055397580" />
     <state x="291" y="100" key="SettingsEditor" timestamp="1584262630127">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -262,7 +321,9 @@
     <state x="454" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584111273572" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/workplace$Run_test3.coverage" NAME="Run_test3 Coverage Results" MODIFIED="1585053862667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/workplace$Run.coverage" NAME="Run Coverage Results" MODIFIED="1584769367432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PerfumeBoxProject" />
-    <SUITE FILE_PATH="coverage/workplace$Run_test2.coverage" NAME="Run_test2 Coverage Results" MODIFIED="1584799724484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/workplace$RunDjango2.coverage" NAME="RunDjango2 Coverage Results" MODIFIED="1584841174819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PerfumeBoxProject" />
+    <SUITE FILE_PATH="coverage/workplace$Run_test2.coverage" NAME="Run_test2 Coverage Results" MODIFIED="1584845597781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
