@@ -15,21 +15,20 @@ res = []
 
 
 @require_http_methods(['GET'])
-def add_book(request):
+def search_perfume(request):
     response = {}
     try:
-        print('触发了add_book')
-        # book = Book(book_name=request.GET.get('book_name'))
-        # book.save()
-        find_code_1 = graph.find_one(
-            label="Person",
-            property_key="name",
-            property_value="Carrie-Anne Moss"
-        )
-        print(find_code_1)
+        print('触发了search_perfume')
+        # find_code_1 = graph.find_one(
+        #     label="Person",
+        #     property_key="name",
+        #     property_value="Carrie-Anne Moss"
+        # )
+        # print(find_code_1)
+        print(request)
         response['msg'] = 'success'
         response['error_num'] = 0
-        print('add_book结束')
+        print('search_perfume结束')
     except Exception as e:
         response['msg'] = str(e)
         response['error_num'] = 1
@@ -38,29 +37,20 @@ def add_book(request):
 
 
 @require_http_methods(['GET'])
-def show_books(request):
+def show_perfume(request):
     response = {}
     try:
-        print('触发了show_book')
-        # books = Book.objects.filter()
-        # response['list'] = json.loads(serializers.serialize("json", books))
-        find_code_2 = graph.find_one(
-            label="Person",
-            property_key="name",
-            property_value="Joel Silver"
-        )
-        print(find_code_2['name'])
-        g = graph.run("MATCH (a:Person) RETURN a LIMIT 5").data()
+        print('触发了show_perfume')
+        print(request)
+        g = graph.run("MATCH (a:Perfume) RETURN a LIMIT 10").data()
         print(g)
         for i in g:
             print(i['a'])
-            res.append(i['a']['name'])
-        # dict = [find_code_2['name'], find_code_2['born']]
-        # print(dict)
+            res.append(i['a']['perfume_name'])
         response['list'] = res
         response['msg'] = "success"
         response['error_num'] = 0
-        print('show_book结束')
+        print('show_perfume结束')
     except Exception as e:
         response['msg'] = str(e)
         response['error_num'] = 1
