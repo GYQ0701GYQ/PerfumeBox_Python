@@ -30,7 +30,8 @@ ua_list = [
 
 def one_perfume(perfume_url, brand_name):
     req1 = urllib.request.Request(perfume_url, headers={'User-agent': random.choice(ua_list)})
-    print('香水详情=============================================================================================================')
+    print(
+        '香水详情=============================================================================================================')
     html1 = urlopen(req1).read()
     soup1 = BeautifulSoup(html1, 'lxml')  # 这里是页面源代码
 
@@ -64,10 +65,22 @@ def one_perfume(perfume_url, brand_name):
     try:
         temp_brief_word = soup1.find('li', {'class': 'desc'}).find('div', {'class': 'showmore'}).text
         brief_word = re.sub('\'|\"', ' ', temp_brief_word)
-        brief_word = re.sub('禁止转载，违者必究| 禁止转载，违者必究| 谢谢|谢谢| 欢迎您|欢迎您| nosetime.com|nosetime.com|香水时代版权所有|香水时代|本页地址', '', brief_word)
+        brief_word = re.sub('禁止转载，违者必究| 禁止转载，违者必究| 谢谢|谢谢| 欢迎您|欢迎您| nosetime.com|nosetime.com|香水时代版权所有|香水时代|本页地址', '',
+                            brief_word)
     except Exception as e:
         brief_word = ''
         print('无简介文字')
+    # brief_word = '巴黎世家 (Balenciaga) 由来自西班牙巴斯克地区的克里斯托瓦尔·巴伦西亚加 (Cristobal Balenciaga) 创立。' \
+    #              '1918年，他在西班牙的圣塞巴斯提安 (San Sebastian) 创立他的第一家店。他那些可爱的蓬蓬裙 (Bubble Skirt) ，' \
+    #              '既古怪又女性化、同时亦非常具有现代感的衣服廓形促使他迈向成功。巴黎世家 (Balenciaga) 的格调普遍受到那些' \
+    #              '偏爱简洁服装的人士所推崇。克里斯托巴尔·巴伦西亚加 (Cristobal Balenciaga) 设计的时装被喻为“革命性”的潮流指导，' \
+    #              '很多名流贵族都指定穿着巴黎世家 (Balenciaga) 时装，巴黎世家 (Balenciaga) 品牌的忠实客户包括西班牙王后、' \
+    #              '比利时王后、温莎公爵夫人、摩洛哥王后等，他们都是当年曾被世界各大时装杂志评选为最佳衣着的名人。' \
+    #              '巴黎世家 (Balenciaga) 包括高级女装和高级男装，而其最为报友所熟知的还是著名的巴黎世家机车包 ' \
+    #              '(Balenciaga Motorcyle Bag) ，特别是名为“Lariat”的那款机车包。巴黎世家机车包 (Balenciaga Motorcyle Bag) ' \
+    #              '首先是被《Vogue》等杂志推荐，很快就在明星街拍上看到被著名It Girl妮可·里奇、林赛·罗韩、帕里斯·希尔顿、' \
+    #              '莎拉·杰西卡·帕克等挽在手臂上，因而巴黎世家机车包 (Balenciaga Motorcyle Bag) 也成为可见度最高、模仿度最高的' \
+    #              '最著名的IT Bag。'
     brief = [brief_img, brief_word]
     graph.run(  # 这句修改了单引号和双引号的位置，直接将列表作为属性值插入，避免了cypher语句单引号错误匹配（列表中有单引号）
         'MATCH (p:Perfume {perfume_name:"' + perfume_name[0] + '"}) set p.perfume_brief="' + str(brief) + '"')
@@ -194,7 +207,8 @@ def one_brand(brand_url):
         'CREATE (:Brand {brand_name:"' + brand_name + '"})')
     # print('1.已存入该brand信息')
     try:
-        brand_img = 'https:' + soup2.find('div', {'class': 'brand'}).find('div', {'class': 'imgborder'}).find('img').get('src')
+        brand_img = 'https:' + soup2.find('div', {'class': 'brand'}).find('div', {'class': 'imgborder'}).find(
+            'img').get('src')
     except Exception as e:
         brand_img = ''
         print('无品牌图片')
@@ -216,7 +230,7 @@ def one_brand(brand_url):
     page_num = 1
     brand_groups = [brand_url]  # 第一组即为当前页面
     brand_perfume = []
-    last_page = list(soup2.find('div', {'class': 'items'}).find_all('a'))[-1]   # 找到尾页的a标签
+    last_page = list(soup2.find('div', {'class': 'items'}).find_all('a'))[-1]  # 找到尾页的a标签
     temp_part_url = str(last_page.get('href'))  # 取尾页的url
     part_url = temp_part_url.split('&')  # 取url的中间部分，后面做拼接
     if last_page.text == '尾页':
@@ -227,7 +241,8 @@ def one_brand(brand_url):
     for i in range(2, page_num + 1):
         brand_groups.append('https://www.nosetime.com' + str(part_url[0]) + '&page=' + str(i) + '#list')
     # print('品牌下各组分页页面链接' + str(brand_groups))
-    for one_group_url in brand_groups[0:1]:  # 只取前两个页面!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    for one_group_url in brand_groups[
+                         0:1]:  # 只取前两个页面!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         sub_req = urllib.request.Request(one_group_url, headers={'User-agent': random.choice(ua_list)})
         sub_html = urlopen(sub_req).read()
         sub_soup = BeautifulSoup(sub_html, 'lxml')  # 这里是页面源代码
@@ -237,7 +252,7 @@ def one_brand(brand_url):
             brand_perfume.append('https://www.nosetime.com' + str(one_temp.get('href')))
     # print('品牌所有香水页面链接' + str(brand_perfume))
     # print('原香水数量' + str(len(brand_perfume)))
-    if len(brand_perfume) > 10:     # 限制数量！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    if len(brand_perfume) > 10:  # 限制数量！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
         brand_perfume = brand_perfume[0:10]
     print('改写后香水数量' + str(len(brand_perfume)))
     # print('各品牌页面链接' + str(brand_perfume))
@@ -247,15 +262,36 @@ def one_brand(brand_url):
     time.sleep(12)
 
 
+def write_brand_letter(brand_url, brand_letter):
+    req3 = urllib.request.Request(brand_url, headers={'User-agent': random.choice(ua_list)})
+    html2 = urlopen(req3).read()
+    soup3 = BeautifulSoup(html2, 'lxml')  # 这里是页面源代码
+    # 录入品牌信息
+    brand_name = soup3.find('div', {'class': 'brand'}).find('h1').text
+    print(brand_name)
+    result = graph.run(
+        'MATCH (b:Brand {brand_name:"' + brand_name + '"}) RETURN COUNT(b)').data()
+    if result[0]['COUNT(b)'] > 0:
+        try:
+            graph.run(
+                'MATCH (b:Brand {brand_name:"' + brand_name + '"}) SET b.brand_letter="' + brand_letter + '"')
+        except Exception as e:
+            print('写入品牌字母失败：' + brand_name)
+            print(one_perfume)
+    else:
+        print('这个没找到哦：===============' + brand_name)
+    time.sleep(8)
+
+
 if __name__ == "__main__":
     graph = Graph(  # 连接图数据库
         "http://localhost:7474",
         username="neo4j",
         password="987qazwsxedc"
     )
+    '''
     ua = random.choice(ua_list)  # 获取随机的UserAgent
     # print('这里是UserAgent' + ua)
-
     letters_url = {'A': 'https://www.nosetime.com/pinpai/2-a.html',
                    'B': 'https://www.nosetime.com/pinpai/3-b.html',
                    'C': 'https://www.nosetime.com/pinpai/4-c.html',
@@ -283,7 +319,8 @@ if __name__ == "__main__":
                    'Y': 'https://www.nosetime.com/pinpai/26-y.html',
                    'Z': 'https://www.nosetime.com/pinpai/27-z.html'}
     req = urllib.request.Request(letters_url['Z'], headers={'User-agent': ua})
-    print('字母页面=============================================================================================================')
+    print(
+        '字母页面=============================================================================================================')
     html = urlopen(req).read()
     soup = BeautifulSoup(html, 'lxml')  # 这里是页面源代码
     letter_brands = []
@@ -292,12 +329,13 @@ if __name__ == "__main__":
         # print('https://www.nosetime.com' + str(item.get('href')))
         letter_brands.append('https://www.nosetime.com' + str(item.get('href')))
     # print('原品牌数量' + str(len(letter_brands)))
-    if len(letter_brands) > 8:
-        letter_brands = letter_brands[0:8]
+    if len(letter_brands) > 11:
+        letter_brands = letter_brands[0:11]
     print('改写后品牌数量' + str(len(letter_brands)))
     # print('各品牌页面链接' + str(letter_brands))
-    for one_brand_url in letter_brands:
-        one_brand(one_brand_url)
-
-    # one_perfume('https://www.nosetime.com/xiangshui/376728-shengshui-demeter-holy-water.html', '帝门特 ( Demeter Fragrance )')
+    # for one_brand_url in letter_brands:
+    # one_brand(one_brand_url)
+    '''
+    # one_perfume('https://www.nosetime.com/xiangshui/543124-tangmu-fute-ford-tobacco-vanille.html',
+    #             "汤姆·福特 ( Tom Ford )")
     # one_brand('https://www.nosetime.com/pinpai/10049142-xiangnaier-chanel.html')
