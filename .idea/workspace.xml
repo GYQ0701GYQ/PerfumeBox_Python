@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3086d882-04d3-4d63-b720-02b7343d1138" name="Default Changelist" comment="">
+    <list default="true" id="3086d882-04d3-4d63-b720-02b7343d1138" name="Default Changelist" comment="test4为爬虫代码，获取了排行榜信息并匹配到之前的香水数据。另外更新了数据库内容，插入了品牌名称的字母字段">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/test3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PerfumeBoxProject/PerfumeBox/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PerfumeBoxProject/PerfumeBox/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
       <recent name="D:\PYCHARM\workplace\PerfumeBoxProject" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Run_test3">
+  <component name="RunManager" selected="Django server.RunDjango">
     <configuration name="RunDjango2" type="PythonConfigurationType" factoryName="Python">
       <module name="workplace" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -229,7 +229,9 @@
       <workItem from="1585749126435" duration="4666000" />
       <workItem from="1585793307508" duration="14015000" />
       <workItem from="1585815195008" duration="3615000" />
-      <workItem from="1585818833595" duration="8103000" />
+      <workItem from="1585818833595" duration="8170000" />
+      <workItem from="1585878423198" duration="2863000" />
+      <workItem from="1585906676065" duration="5090000" />
     </task>
     <task id="LOCAL-00001" summary="与上一版本相同，添加仓库后自动更改了一些系统文件">
       <created>1584347473441</created>
@@ -301,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585808579296</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="test4为爬虫代码，获取了排行榜信息并匹配到之前的香水数据。另外更新了数据库内容，插入了品牌名称的字母字段">
+      <created>1585838029393</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585838029393</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +339,8 @@
     <MESSAGE value="更改test3程序后已完成数据录入，test4测试爬取文本的过滤" />
     <MESSAGE value="删除test4" />
     <MESSAGE value="封装了axios，用axios请求后端，目前在主页输入数据可以返回到页面上" />
-    <option name="LAST_COMMIT_MESSAGE" value="封装了axios，用axios请求后端，目前在主页输入数据可以返回到页面上" />
+    <MESSAGE value="test4为爬虫代码，获取了排行榜信息并匹配到之前的香水数据。另外更新了数据库内容，插入了品牌名称的字母字段" />
+    <option name="LAST_COMMIT_MESSAGE" value="test4为爬虫代码，获取了排行榜信息并匹配到之前的香水数据。另外更新了数据库内容，插入了品牌名称的字母字段" />
   </component>
   <component name="WindowStateProjectService">
     <state x="447" y="6" width="1089" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585374936707">
@@ -341,10 +351,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="504" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1584496773306" />
-    <state x="334" y="0" key="CommitChangelistDialog2" timestamp="1585808577253">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1585906930391">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="334" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585808577253" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585906930391" />
     <state x="371" y="287" width="440" height="491" key="EnvironmentVariablesDialog" timestamp="1584420321988">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -353,22 +363,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="514" y="207" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585374935176" />
-    <state width="1493" height="287" key="GridCell.Tab.0.bottom" timestamp="1585832545696">
+    <state width="1493" height="141" key="GridCell.Tab.0.bottom" timestamp="1585923060204">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="287" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585832545696" />
-    <state width="1493" height="287" key="GridCell.Tab.0.center" timestamp="1585832545696">
+    <state width="1493" height="141" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585923060204" />
+    <state width="1493" height="141" key="GridCell.Tab.0.center" timestamp="1585923060204">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="287" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585832545696" />
-    <state width="1493" height="287" key="GridCell.Tab.0.left" timestamp="1585832545696">
+    <state width="1493" height="141" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585923060204" />
+    <state width="1493" height="141" key="GridCell.Tab.0.left" timestamp="1585923060204">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="287" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585832545696" />
-    <state width="1493" height="287" key="GridCell.Tab.0.right" timestamp="1585832545696">
+    <state width="1493" height="141" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585923060204" />
+    <state width="1493" height="141" key="GridCell.Tab.0.right" timestamp="1585923060204">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="287" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585832545696" />
+    <state width="1493" height="141" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585923060204" />
     <state x="291" y="100" key="SettingsEditor" timestamp="1585796960692">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
