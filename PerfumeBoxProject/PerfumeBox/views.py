@@ -1,3 +1,4 @@
+# coding:utf-8
 import re
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
@@ -29,12 +30,14 @@ def search_perfume(request):
         elif search_type == '品牌':
             print('处理品牌搜索')
         elif search_type == '香调':
-            g = graph.run('MATCH (p:Perfume)  WHERE p.perfume_fragment IS NOT NULL RETURN p.perfume_name,p.perfume_fragment').data()
+            g = graph.run(
+                'MATCH (p:Perfume)  WHERE p.perfume_fragment IS NOT NULL RETURN p.perfume_name,p.perfume_fragment').data()
             for each_perfume in g:
                 if search_name in each_perfume['p.perfume_fragment']:
                     name_list.append(each_perfume['p.perfume_name'])
         elif search_type == '标签':
-            g = graph.run('MATCH (p:Perfume) WHERE p.perfume_tag IS NOT NULL RETURN p.perfume_name,p.perfume_tag').data()
+            g = graph.run(
+                'MATCH (p:Perfume) WHERE p.perfume_tag IS NOT NULL RETURN p.perfume_name,p.perfume_tag').data()
             for each_perfume in g:
                 if search_name in each_perfume['p.perfume_tag']:
                     name_list.append(each_perfume['p.perfume_name'])
@@ -129,6 +132,45 @@ def search_one_perfume(request):
         response['msg'] = 'success'
         response['error_num'] = 0
         print('search_perfume结束')
+    except Exception as e:
+        response['msg'] = str(e)
+        response['error_num'] = 1
+
+    return JsonResponse(response)
+
+
+@require_http_methods(['GET'])
+def search_one_letter(request):
+    response = {}
+    res2 = []
+    name_list = []
+    try:
+        print('触发了search_letter')
+        search_letter = request.GET.get('search_letter')
+        print(search_letter)
+        g = graph.run('MATCH (b:Brand) WHERE b.brand_letter="' + search_letter + '" RETURN b').data()
+        for item in g:
+            res1 = ['#', '#', '#', '#']  # brief,img,letter,name
+            for k in item['b']:
+                # print(item['b'][k])
+                if k == 'brand_brief':
+                    res1[0] = item['b'][k]
+                elif k == 'brand_img':
+                    res1[1] = item['b'][k]
+                elif k == 'brand_letter':
+                    res1[2] = item['b'][k]
+                elif k == 'brand_name':
+                    if re.search('(|)', item['b'][k]) is not None:
+                        res1[3] = re.split('\\(|\\)', item['b'][k])
+                        res1[3].remove('')
+                    else:
+                        res1[3] = item['b'][k]
+            # print(res1)
+            res2.append(res1)
+        response['list'] = res2
+        response['msg'] = 'success'
+        response['error_num'] = 0
+        print('search_letter结束')
     except Exception as e:
         response['msg'] = str(e)
         response['error_num'] = 1

@@ -1,4 +1,6 @@
 # coding:utf-8
+import re
+
 from py2neo import Graph, Node, Relationship
 
 if __name__ == "__main__":
@@ -7,9 +9,9 @@ if __name__ == "__main__":
         username="neo4j",
         password="987qazwsxedc"
     )
-    g = graph.run('MATCH (p:Perfume)  WHERE p.perfume_tag<>"None" RETURN p.perfume_name,p.perfume_tag ').data()
-    print(g)
+    search_letter = 'A'
+    g = graph.run('MATCH (b:Brand) WHERE b.brand_letter="' + search_letter + '" RETURN b').data()
     for each_perfume in g:
-        print(each_perfume['p.perfume_tag'])
-        if '温暖辛辣' in each_perfume['p.perfume_tag']:
-            print(each_perfume['p.perfume_name'])
+        if re.search('(|)', each_perfume['b']['brand_name']) is not None:
+            demo = re.split('\\(|\\)', each_perfume['b']['brand_name'])
+            demo.remove('')
