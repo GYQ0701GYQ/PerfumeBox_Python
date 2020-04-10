@@ -1,8 +1,6 @@
 # coding:utf-8
 import re
-from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
-from django.core import serializers
 from django.http import JsonResponse
 import json
 from py2neo import Graph, Node, Relationship
@@ -50,6 +48,10 @@ def search_perfume(request):
             for each_perfume in g:
                 if search_name in each_perfume['p.perfume_tag']:
                     name_list.append(each_perfume['p.perfume_name'])
+        elif search_type == '属性':
+            g = graph.run('MATCH (p)-[:type_is]->(t:Type{type_name:"' + search_name + '"}) RETURN p.perfume_name').data()
+            for each_perfume in g:
+                name_list.append(each_perfume['p.perfume_name'])
         # print(name_list)
         # for each_name in name_list:
         #     g = graph.run('MATCH (a:Perfume{perfume_name:"' + str(each_name) + '"}) RETURN a').data()
@@ -97,15 +99,19 @@ def search_perfume(request):
 def search_one_perfume(request):
     response = {}
     try:
-        print('触发了search_perfume')
+        print('触发了search_one_perfume')
         search_name = request.GET.get('perfume_name')
         g = graph.run('MATCH (a:Perfume{perfume_name:"' + search_name + '"}) RETURN a').data()
         temp_dict = dict(g[0]['a'])  # 返回符合查询条件的所有香水
-        print(temp_dict)
-        res1 = ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#']
+        # print(temp_dict)
+        res1 = ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#']
         for k in temp_dict:
             if k == 'perfume_tag':
-                res1[0] = temp_dict[k]
+                res1[0] = re.split(',|，|\\[|\\]|\'', temp_dict[k])
+                while res1[0].count('') > 0:  # 分割后去掉空字符
+                    res1[0].remove('')
+                while res1[0].count(' ') > 0:
+                    res1[0].remove(' ')
             elif k == 'perfume_published':
                 res1[1] = temp_dict[k]
             elif k == 'perfume_name':
@@ -113,25 +119,55 @@ def search_one_perfume(request):
             elif k == 'perfume_img':
                 res1[3] = temp_dict[k]
             elif k == 'perfume_fragment':
-                res1[4] = temp_dict[k]
+                res1[4] = re.split(',|，|\\[|\\]|\'', temp_dict[k])
+                while res1[4].count('') > 0:  # 分割后去掉空字符
+                    res1[4].remove('')
+                while res1[4].count(' ') > 0:
+                    res1[4].remove(' ')
             elif k == 'perfume_attribute':
                 res1[5] = temp_dict[k]
             elif k == 'perfume_brief':
-                res1[6] = temp_dict[k]
+                res1[6] = re.split(',', temp_dict[k], 1)
+                res1[7] = res1[6][1]
+                res1[6] = res1[6][0]
+
+                res1[6] = re.split(',|，|\\[|\\]|\'', res1[6])
+                while res1[6].count('') > 0:  # 分割后去掉空字符
+                    res1[6].remove('')
+                while res1[6].count(' ') > 0:
+                    res1[6].remove(' ')
+                res1[7] = re.sub(']', '', res1[7])
             elif k == 'perfume_brand':
-                res1[7] = temp_dict[k]
-            elif k == 'second_fragment':
                 res1[8] = temp_dict[k]
+            elif k == 'second_fragment':
+                res1[9] = re.split(',|，|\\[|\\]|\'', temp_dict[k])
+                while res1[9].count('') > 0:  # 分割后去掉空字符
+                    res1[9].remove('')
+                while res1[9].count(' ') > 0:
+                    res1[9].remove(' ')
             elif k == 'first_fragment':
-                res1[9] = temp_dict[k]
+                res1[10] = re.split(',|，|\\[|\\]|\'', temp_dict[k])
+                while res1[10].count('') > 0:  # 分割后去掉空字符
+                    res1[10].remove('')
+                while res1[10].count(' ') > 0:
+                    res1[10].remove(' ')
             elif k == 'perfume_flavorist':
-                res1[10] = temp_dict[k]
+                res1[11] = re.split(',|，|\\[|\\]|\'', temp_dict[k])
+                while res1[11].count('') > 0:  # 分割后去掉空字符
+                    res1[11].remove('')
+                while res1[11].count(' ') > 0:
+                    res1[11].remove(' ')
             elif k == 'third_fragment':
-                res1[11] = temp_dict[k]
+                res1[12] = re.split(',|，|\\[|\\]|\'', temp_dict[k])
+                while res1[12].count('') > 0:  # 分割后去掉空字符
+                    res1[12].remove('')
+                while res1[12].count(' ') > 0:
+                    res1[12].remove(' ')
+        # print(res1)
         response['list'] = res1
         response['msg'] = 'success'
         response['error_num'] = 0
-        print('search_perfume结束')
+        print('search_one_perfume结束')
     except Exception as e:
         response['msg'] = str(e)
         response['error_num'] = 1
@@ -214,11 +250,42 @@ def user_login(request):
         g = graph.run(
             'MATCH (u:User{user_name:"' + user_name + '",user_password:"' + user_password + '"}) RETURN COUNT(u)').data()
         if g[0]['COUNT(u)'] > 0:
-            response['msg'] = 'success'
+            response['msg'] = '登陆成功，已为您返回上一页'
             response['error_num'] = 0
             print('user_login结束')
         else:
             response['error_num'] = 2
+            response['msg'] = '用户名或密码错误，请重试'
+    except Exception as e:
+        response['msg'] = str(e)
+        response['error_num'] = 1
+
+    return JsonResponse(response)
+
+
+@require_http_methods(['GET'])
+def user_register(request):
+    response = {}
+    list1 = []
+    try:
+        print('触发了user_register')
+        user_name = request.GET.get('user_name')
+        user_password = request.GET.get('user_password')
+        g = graph.run(
+            'MATCH (u:User{user_name:"' + user_name + '"}) RETURN COUNT(u)').data()
+        if g[0]['COUNT(u)'] <= 0:
+            try:
+                g = graph.run(
+                    'CREATE (u:User{user_name:"' + user_name + '",user_password:"' + user_password + '"}) RETURN COUNT(u)').data()
+                response['msg'] = '注册成功，已为您自动登录并返回上一页'
+                response['error_num'] = 0
+                print('user_register结束')
+            except Exception as e:
+                response['error_num'] = 2
+                response['msg'] = '注册失败，请重试'
+        else:
+            response['error_num'] = 2
+            response['msg'] = '该用户名已被占用，请重试'
     except Exception as e:
         response['msg'] = str(e)
         response['error_num'] = 1
